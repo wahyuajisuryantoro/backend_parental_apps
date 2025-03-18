@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apps_detail_guru', function (Blueprint $table) {
+        Schema::create('app_detail_guru', function (Blueprint $table) {
             $table->id();
             $table->string('username')->unique();
             $table->string('nama');
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('foto')->nullable();
             $table->timestamps();
             
-            $table->foreign('username')->references('username')->on('apps_login')
+            $table->foreign('username')->references('username')->on('app_login')
                   ->onDelete('cascade')->onUpdate('cascade');
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apps_detail_guru');
+        Schema::dropIfExists('app_detail_guru');
     }
 };

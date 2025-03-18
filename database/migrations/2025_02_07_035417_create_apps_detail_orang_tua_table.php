@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apps_detail_orang_tua', function (Blueprint $table) {
+        Schema::create('app_detail_orang_tua', function (Blueprint $table) {
             $table->id();
             $table->string('username')->unique();
             $table->string('nama');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apps_detail_orang_tua');
+        Schema::dropIfExists('app_detail_orang_tua');
     }
 };

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apps_pengajuan_absensi', function (Blueprint $table) {
+        Schema::create('app_pengajuan_absensi', function (Blueprint $table) {
             $table->id();
             $table->integer('id_siswa');
             $table->unsignedBigInteger('id_orang_tua');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->timestamp('created_at')->useCurrent();
         });
 
-        Schema::table('apps_pengajuan_absensi', function (Blueprint $table) {
+        Schema::table('app_pengajuan_absensi', function (Blueprint $table) {
             $table->foreign('id_siswa')
                   ->references('id')
                   ->on('mstr_siswa')
@@ -33,7 +33,7 @@ return new class extends Migration
                   
             $table->foreign('id_orang_tua')
                   ->references('id')
-                  ->on('apps_detail_orang_tua')
+                  ->on('app_detail_orang_tua')
                   ->cascadeOnDelete();
         });
     }
